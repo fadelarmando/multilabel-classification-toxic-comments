@@ -80,7 +80,7 @@ class Model:
         model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
         # Melatih model dengan data latih
-        model.fit(padded_train_sequences, np.array(labels_train), epochs=self.epochs, batch_size=self.batch_size) 
+        model.fit(padded_train_sequences, np.array(labels_train), validation_split=0.1, epochs=self.epochs, batch_size=self.batch_size) 
         
         # model.save(f"model_data/model/model-{timestamp}")            
         print("-------Training selesai-------")
